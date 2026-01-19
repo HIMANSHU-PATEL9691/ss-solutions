@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* SS Solutions - Premium Gold Theme Design System */
+
+@layer base {
+  :root {
+    /* Light/Bright Premium Theme */
+    --background: 45 30% 98%;
+    --foreground: 30 15% 15%;
+
+    --card: 45 25% 97%;
+    --card-foreground: 30 15% 15%;
+
+    --popover: 45 30% 98%;
+    --popover-foreground: 30 15% 15%;
+
+    /* Gold Primary Colors */
+    --primary: 43 75% 41%;
+    --primary-foreground: 45 30% 98%;
+
+    /* Cream Secondary */
+    --secondary: 45 40% 92%;
+    --secondary-foreground: 30 15% 15%;
+
+    --muted: 45 20% 94%;
+    --muted-foreground: 30 10% 45%;
+
+    /* Gold Accent */
+    --accent: 45 70% 55%;
+    --accent-foreground: 30 15% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 45 30% 98%;
+
+    --border: 45 25% 88%;
+    --input: 45 25% 88%;
+    --ring: 43 75% 41%;
+
+    --radius: 0.5rem;
+
+    /* Custom Gold Gradients */
+    --gold-light: 45 80% 75%;
+    --gold-medium: 43 75% 55%;
+    --gold-dark: 37 60% 35%;
+    --gold-shimmer: 50 85% 80%;
+
+    --sidebar-background: 45 25% 97%;
+    --sidebar-foreground: 30 15% 25%;
+    --sidebar-primary: 43 75% 41%;
+    --sidebar-primary-foreground: 45 30% 98%;
+    --sidebar-accent: 45 40% 92%;
+    --sidebar-accent-foreground: 30 15% 15%;
+    --sidebar-border: 45 25% 88%;
+    --sidebar-ring: 43 75% 41%;
+  }
+
+  .dark {
+    --background: 30 15% 10%;
+    --foreground: 45 30% 95%;
+
+    --card: 30 15% 12%;
+    --card-foreground: 45 30% 95%;
+
+    --popover: 30 15% 10%;
+    --popover-foreground: 45 30% 95%;
+
+    --primary: 45 70% 55%;
+    --primary-foreground: 30 15% 10%;
+
+    --secondary: 30 15% 18%;
+    --secondary-foreground: 45 30% 95%;
+
+    --muted: 30 15% 18%;
+    --muted-foreground: 45 20% 65%;
+
+    --accent: 45 70% 55%;
+    --accent-foreground: 30 15% 10%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 45 30% 95%;
+
+    --border: 30 15% 20%;
+    --input: 30 15% 20%;
+    --ring: 45 70% 55%;
+
+    --sidebar-background: 30 15% 10%;
+    --sidebar-foreground: 45 30% 95%;
+    --sidebar-primary: 45 70% 55%;
+    --sidebar-primary-foreground: 30 15% 10%;
+    --sidebar-accent: 30 15% 18%;
+    --sidebar-accent-foreground: 45 30% 95%;
+    --sidebar-border: 30 15% 20%;
+    --sidebar-ring: 45 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-serif antialiased;
+    font-family: 'Georgia', 'Cormorant Garamond', 'Times New Roman', serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .gold-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gold-dark)) 0%,
+      hsl(var(--gold-medium)) 25%,
+      hsl(var(--gold-shimmer)) 50%,
+      hsl(var(--gold-medium)) 75%,
+      hsl(var(--gold-dark)) 100%
+    );
+  }
+
+  .gold-gradient-text {
+    background: linear-gradient(
+      135deg,
+      hsl(43 75% 41%) 0%,
+      hsl(45 70% 55%) 50%,
+      hsl(43 75% 41%) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gold-border {
+    border: 1px solid transparent;
+    background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+                linear-gradient(135deg, hsl(var(--gold-dark)), hsl(var(--gold-shimmer)), hsl(var(--gold-dark))) border-box;
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--gold-shimmer) / 0.3) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 20px 40px -15px hsl(var(--gold-dark) / 0.3);
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+.social-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: linear-gradient(135deg, #f7c873, #d9a441);
+  color: #000;
+}
+
