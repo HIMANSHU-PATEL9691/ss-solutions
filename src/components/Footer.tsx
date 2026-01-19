@@ -8,7 +8,6 @@ import {
   Instagram,
   Linkedin,
   Youtube,
-  MessageCircle,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -33,44 +32,46 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-foreground text-background pt-16">
+    <footer className="bg-[#0b0f19] text-gray-300 pt-20">
       <div className="container-custom">
+        {/* ================= TOP GRID ================= */}
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
+          
+          {/* BRAND */}
           <div>
             <h3 className="text-2xl font-display font-bold gold-gradient-text mb-4">
               SS Solutions
             </h3>
-            <p className="text-background/70 mb-6 leading-relaxed">
-              We design and develop modern software solutions that help
-              businesses grow digitally with confidence.
+            <p className="text-sm leading-relaxed text-gray-400 mb-6">
+              We design and develop modern ERP, CRM, and digital solutions that
+              help businesses grow faster and smarter.
             </p>
 
             <div className="space-y-3 text-sm">
               <a
-                href="tel:+919876543210"
-                className="flex items-center gap-3 text-background/70 hover:text-gold transition"
+                href="tel:+917000668684"
+                className="flex items-center gap-3 hover:text-gold transition"
               >
-                <Phone className="w-4 h-4" />
-                +91 98765 43210
+                <Phone className="w-4 h-4 text-primary" />
+               +917000668684
               </a>
               <a
-                href="mailto:contact@sssolutions.com"
-                className="flex items-center gap-3 text-background/70 hover:text-gold transition"
+                href="mailto:sssolutionindore@gmail.com"
+                className="flex items-center gap-3 hover:text-gold transition"
               >
-                <Mail className="w-4 h-4" />
-                contact@sssolutions.com
+                <Mail className="w-4 h-4 text-primary" />
+               sssolutionindore@gmail.com
               </a>
-              <div className="flex items-center gap-3 text-background/70">
-                <MapPin className="w-4 h-4" />
-                Mumbai, India
+              <div className="flex items-center gap-3 text-gray-400">
+                <MapPin className="w-4 h-4 text-primary" />
+                Indore, India
               </div>
             </div>
           </div>
 
-          {/* Services */}
+          {/* SERVICES */}
           <div>
-            <h4 className="text-lg font-display font-semibold mb-4">
+            <h4 className="text-lg font-display font-semibold text-white mb-4">
               Services
             </h4>
             <ul className="space-y-3 text-sm">
@@ -78,7 +79,7 @@ const Footer = () => {
                 <li key={service}>
                   <Link
                     to="/services"
-                    className="text-background/70 hover:text-gold transition"
+                    className="hover:text-gold transition"
                   >
                     {service}
                   </Link>
@@ -87,9 +88,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links */}
+          {/* QUICK LINKS */}
           <div>
-            <h4 className="text-lg font-display font-semibold mb-4">
+            <h4 className="text-lg font-display font-semibold text-white mb-4">
               Quick Links
             </h4>
             <ul className="space-y-3 text-sm">
@@ -97,7 +98,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-background/70 hover:text-gold transition"
+                    className="hover:text-gold transition"
                   >
                     {link.name}
                   </Link>
@@ -106,55 +107,54 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social & CTA */}
+          {/* SOCIAL + CTA */}
           <div>
-            <h4 className="text-lg font-display font-semibold mb-4">
+            <h4 className="text-lg font-display font-semibold text-white mb-4">
               Connect With Us
             </h4>
 
-            <p className="text-background/70 text-sm mb-5">
-              Follow us on social media for updates, launches, and tech
-              insights.
+            <p className="text-sm text-gray-400 mb-6">
+              Follow us for product updates, launches, and tech insights.
             </p>
 
             <div className="flex gap-4 mb-6">
-              <a href="#" className="social-icon">
-                <Facebook size={18} />
-              </a>
-              <a href="#" className="social-icon">
-                <Instagram size={18} />
-              </a>
-              <a href="#" className="social-icon">
-                <Linkedin size={18} />
-              </a>
-              <a href="#" className="social-icon">
-                <Youtube size={18} />
-              </a>
-              <a href="#" className="social-icon">
-                <MessageCircle size={18} />
-              </a>
+              {[Facebook, Instagram, Linkedin, Youtube].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  aria-label="Social Link"
+                  className="w-10 h-10 rounded-full border border-white/10 
+                             flex items-center justify-center 
+                             hover:border-gold hover:text-gold transition"
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
             </div>
 
             <Link
               to="/contact"
-              className="inline-block px-6 py-3 rounded-lg gold-gradient text-foreground font-semibold hover:opacity-90 transition"
+              className="inline-block px-6 py-3 rounded-lg gold-gradient 
+                         text-foreground font-semibold hover:opacity-90 transition"
             >
               Start a Project
             </Link>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="mt-14 py-6 border-t border-background/20 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-background/60">
-            © {new Date().getFullYear()} SS Solutions. All rights reserved.{" "}
-            <span className="mx-1">|</span>
+        {/* ================= BOTTOM BAR ================= */}
+        <div className="mt-16 py-6 border-t border-white/10 
+                        flex flex-col md:flex-row items-center 
+                        justify-between gap-4 text-sm">
+          <p className="text-gray-400">
+            © {new Date().getFullYear()} SS Solutions. All rights reserved.
+            <span className="mx-2">|</span>
             Collaborated with{" "}
             <a
               href="https://digitalflyhigh.in/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gold hover:underline transition"
+              className="text-gold hover:underline"
             >
               DFHS
             </a>
@@ -164,7 +164,8 @@ const Footer = () => {
             onClick={scrollToTop}
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-background/10 hover:bg-background/20 transition text-sm"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg 
+                       bg-white/5 hover:bg-white/10 transition"
           >
             Back to Top
             <ArrowUp className="w-4 h-4" />

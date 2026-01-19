@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { FloatingButtons } from "@/components/WhatsAppButton";
+
 
 interface LayoutProps {
   children: ReactNode;
@@ -12,6 +14,9 @@ const Layout = ({ children }: LayoutProps) => {
       <Navbar />
       <main>{children}</main>
       <Footer />
+
+    <FloatingButtons />
+
     </div>
   );
 };

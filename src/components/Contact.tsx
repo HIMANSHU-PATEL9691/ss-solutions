@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,8 +8,9 @@ import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true });
   const { toast } = useToast();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,34 +31,30 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "+91 98765 43210",
-      href: "tel:+919876543210",
+      value: "+91 7000668684",
+      href: "tel:+917000668684",
     },
     {
       icon: Mail,
       title: "Email",
-      value: "contact@sssolutions.com",
-      href: "mailto:contact@sssolutions.com",
-    },
-    {
-      icon: MapPin,
-      title: "Location",
-      value: "Mumbai, India",
-      href: "#",
+      value: "sssolutionindore@gmail.com",
+      href: "mailto:sssolutionindore@gmail.com",
     },
   ];
 
   return (
     <section id="contact" className="section-padding bg-secondary/30" ref={ref}>
       <div className="container-custom">
-        {/* Section Header */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-primary font-medium mb-4 block">Get in Touch</span>
+          <span className="text-primary font-medium mb-4 block">
+            Get in Touch
+          </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
             Let's Build Something{" "}
             <span className="gold-gradient-text">Amazing Together</span>
@@ -80,61 +76,70 @@ const Contact = () => {
             <h3 className="text-2xl font-display font-semibold mb-6">
               Send us a Message
             </h3>
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Name</label>
+                  <label className="text-sm font-medium mb-2 block">
+                    Name
+                  </label>
                   <Input
+                    required
                     placeholder="Your name"
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    required
-                    className="bg-background border-border focus:border-primary"
                   />
                 </div>
+
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Email</label>
+                  <label className="text-sm font-medium mb-2 block">
+                    Email
+                  </label>
                   <Input
+                    required
                     type="email"
                     placeholder="your@email.com"
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
-                    required
-                    className="bg-background border-border focus:border-primary"
                   />
                 </div>
               </div>
+
               <div>
-                <label className="text-sm font-medium mb-2 block">Phone</label>
+                <label className="text-sm font-medium mb-2 block">
+                  Phone
+                </label>
                 <Input
                   placeholder="Your phone number"
                   value={formData.phone}
                   onChange={(e) =>
                     setFormData({ ...formData, phone: e.target.value })
                   }
-                  className="bg-background border-border focus:border-primary"
                 />
               </div>
+
               <div>
-                <label className="text-sm font-medium mb-2 block">Message</label>
+                <label className="text-sm font-medium mb-2 block">
+                  Message
+                </label>
                 <Textarea
-                  placeholder="Tell us about your project..."
+                  required
                   rows={5}
+                  placeholder="Tell us about your project..."
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  required
-                  className="bg-background border-border focus:border-primary resize-none"
                 />
               </div>
-              <Button type="submit" variant="gold" size="lg" className="w-full group">
+
+              <Button type="submit" variant="gold" size="lg" className="w-full">
                 Send Message
-                <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <Send className="w-4 h-4 ml-2" />
               </Button>
             </form>
           </motion.div>
@@ -151,8 +156,7 @@ const Contact = () => {
                 Contact Information
               </h3>
               <p className="text-muted-foreground">
-                We're here to help and answer any question you might have. We look
-                forward to hearing from you!
+                We're here to help and answer any question you might have.
               </p>
             </div>
 
@@ -165,14 +169,18 @@ const Contact = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.4 + index * 0.1 }}
                   whileHover={{ x: 5 }}
-                  className="flex items-center gap-4 p-4 bg-card rounded-xl gold-border hover-lift block"
+                  className="flex items-center gap-4 p-4 bg-card rounded-xl gold-border hover-lift"
                 >
                   <div className="w-12 h-12 rounded-xl gold-gradient flex items-center justify-center shrink-0">
                     <item.icon className="w-5 h-5 text-foreground" />
                   </div>
                   <div>
-                    <div className="text-sm text-muted-foreground">{item.title}</div>
-                    <div className="font-medium text-foreground">{item.value}</div>
+                    <div className="text-sm text-muted-foreground">
+                      {item.title}
+                    </div>
+                    <div className="font-medium text-foreground">
+                      {item.value}
+                    </div>
                   </div>
                 </motion.a>
               ))}
@@ -185,19 +193,27 @@ const Contact = () => {
               transition={{ delay: 0.7 }}
               className="p-6 bg-card rounded-xl gold-border"
             >
-              <h4 className="font-display font-semibold mb-4">Working Hours</h4>
-              <div className="space-y-2 text-muted-foreground">
+              <h4 className="font-display font-semibold mb-4">
+                Working Hours
+              </h4>
+              <div className="space-y-2 text-muted-foreground text-sm">
                 <div className="flex justify-between">
-                  <span>Monday - Friday</span>
-                  <span className="font-medium text-foreground">9:00 AM - 6:00 PM</span>
+                  <span>Monday – Friday</span>
+                  <span className="font-medium text-foreground">
+                    9:00 AM – 6:00 PM
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span>Saturday</span>
-                  <span className="font-medium text-foreground">10:00 AM - 4:00 PM</span>
+                  <span className="font-medium text-foreground">
+                    10:00 AM – 4:00 PM
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span>Sunday</span>
-                  <span className="font-medium text-foreground">Closed</span>
+                  <span className="font-medium text-foreground">
+                    Closed
+                  </span>
                 </div>
               </div>
             </motion.div>
