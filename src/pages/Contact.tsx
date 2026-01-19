@@ -18,23 +18,21 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "+91 98765 43210",
-      subValue: "+91 98765 43211",
-      href: "tel:+919876543210",
+      value: "+91 7000668684",
+      href: "tel:+917000668684",
     },
     {
       icon: Mail,
       title: "Email",
-      value: "contact@sssolutions.com",
-      subValue: "support@sssolutions.com",
-      href: "mailto:contact@sssolutions.com",
+      value: "sssolutionindore@gmail.com",
+      href: "mailto:sssolutionindore@gmail.com",
     },
     {
       icon: MapPin,
       title: "Office",
-      value: "Mumbai, Maharashtra",
-      subValue: "India - 400001",
-      href: "https://maps.google.com",
+      value: "Indore, Madhya Pradesh ",
+      subValue: "India - 452006",
+      href: "https://www.google.com/maps/dir//22.741127,75.8337097/@22.7348545,75.8385369,13.67z?hl=en&entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D",
     },
     {
       icon: Clock,
@@ -216,12 +214,11 @@ const Contact = () => {
                 SS Solutions
               </h3>
               <p className="text-muted-foreground">
-                Business Center, Lower Parel<br />
-                Mumbai, Maharashtra 400013<br />
-                India
+               7 Subham palace, Scheme no 51 indore, PRRM+FF8, Scheme No 51,<br/>
+                Indore, Madhya Pradesh 452006, India
               </p>
               <a
-                href="https://maps.google.com"
+                href="https://www.google.com/maps/dir//22.741127,75.8337097/@22.7348545,75.8385369,13.67z?hl=en&entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block mt-4"

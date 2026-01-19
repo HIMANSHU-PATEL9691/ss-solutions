@@ -120,7 +120,7 @@
       135deg,
       hsl(var(--gold-dark)) 0%,
       hsl(var(--gold-medium)) 25%,
-      hsl(var(--gold-shimmer)) 50%,
+      hsl(var(--gold-shimmer)/ 0.86) 50%,
       hsl(var(--gold-medium)) 75%,
       hsl(var(--gold-dark)) 100%
     );
