@@ -63,7 +63,7 @@ const About = () => {
               {[
                 { value: "10+", label: "Years" },
                 { value: "150+", label: "Clients" },
-                { value: "500+", label: "Projects" },
+                { value: "700+", label: "Projects" },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}

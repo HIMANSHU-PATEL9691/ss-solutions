@@ -167,7 +167,7 @@ const Contact = () => {
                 {[
                   "80+ ready-to-deploy software products",
                   "10+ years of industry experience",
-                  "500+ satisfied clients worldwide",
+                  "700+ satisfied clients worldwide",
                   "24/7 technical support",
                   "Flexible & scalable solutions",
                   "Competitive pricing",

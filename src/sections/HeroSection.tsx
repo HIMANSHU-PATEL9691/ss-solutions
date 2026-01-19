@@ -118,7 +118,7 @@ const Index = () => {
             >
               {[
                 { value: "80+", label: "Software Products" },
-                { value: "500+", label: "Happy Clients" },
+                { value: "700+", label: "Happy Clients" },
                 { value: "10+", label: "Years Experience" },
                 { value: "24/7", label: "Support" },
               ].map((stat, index) => (

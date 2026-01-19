@@ -119,7 +119,7 @@ const About = () => {
                     <div className="text-xs text-muted-foreground">Products</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-display font-bold gold-gradient-text">500+</div>
+                    <div className="text-2xl font-display font-bold gold-gradient-text">700+</div>
                     <div className="text-xs text-muted-foreground">Clients</div>
                   </div>
                 </div>
