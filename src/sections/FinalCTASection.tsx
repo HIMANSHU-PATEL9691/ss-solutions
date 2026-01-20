@@ -71,7 +71,7 @@ const FinalCTASection = () => {
               className="border-foreground text-foreground hover:bg-foreground hover:text-background"
               asChild
             >
-              <a href="tel:+910000000000">
+              <a href="tel:+917000668684">
                 <Phone className="mr-2 w-5 h-5" />
                 Talk to Expert
               </a>

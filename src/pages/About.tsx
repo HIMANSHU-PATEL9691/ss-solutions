@@ -160,7 +160,7 @@ const About = () => {
                 </div>
                 <div className="flex items-center gap-2 text-foreground">
                   <MapPin className="w-5 h-5 text-primary" />
-                  <span>Mumbai, India</span>
+                  <span>Indore, India</span>
                 </div>
                 <div className="flex items-center gap-2 text-foreground">
                   <Globe className="w-5 h-5 text-primary" />
